@@ -1,0 +1,16 @@
+{
+  "name": "walkthrough",
+  "version": "1.0.0",
+  "description": "개요\r ----------------------------------------\r 다양한 검색기능을 제공하는 공략 웹페이지",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

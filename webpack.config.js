@@ -5,16 +5,21 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel',
-        exclude: /node_modules/,
-        query: {
-            cacheDirectory: true,
-            presets: ['es2015', 'react']
-        }
-      }
-    ]
+    rules: [{
+      test: /\.js?$/,
+      loader: 'babel-loader',
+      options: {
+        presets: [
+          [
+            '@babel/preset-env', {
+              targets: { node: 'current' },
+              useBuiltIns: 'usage'
+            }
+          ],
+          '@babel/preset-react',
+        ],
+      },
+      exclude: ['/node_modules'],
+    }],
   }
-}
+};

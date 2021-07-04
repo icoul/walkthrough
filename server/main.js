@@ -1,6 +1,7 @@
 import express from 'express';
 import WebpackDevServer from 'webpack-dev-server';
 import webpack from 'webpack';
+import connection from './mysql';
 
 const app = express();
 const port = 3000;
@@ -18,6 +19,7 @@ if(process.env.NODE_ENV == 'development') {
   });
 }
 
+connection.connect();
 app.use('/', express.static(__dirname + '/../public'));
 
 import units from './route/units'
